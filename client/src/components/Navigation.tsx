@@ -263,15 +263,27 @@ const Navigation = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200" ref={dropdownRef}>
+    <header className="sticky top-0 z-50 bg-white border-b border-purple-200" ref={dropdownRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary-600 rounded flex items-center justify-center">
-              <Truck className="w-6 h-6 text-white" />
+          {/* Logo with Colorful Brand */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 transform">
+                <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center">
+                  <span className="text-2xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    G
+                  </span>
+                </div>
+              </div>
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full border-2 border-white animate-pulse"></div>
             </div>
-            <span className="text-xl font-bold text-gray-900">GOOBE LOGISTIC</span>
+             <div className="flex flex-col">
+               <span className="text-xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                 GOOBE
+               </span>
+               <span className="text-xs font-bold text-purple-600 -mt-1">LOGISTIC</span>
+             </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -281,11 +293,11 @@ const Navigation = () => {
               <button
                 onClick={() => handleNavClick('services')}
                 onMouseEnter={() => setActiveDropdown('services')}
-                className={`px-4 py-2 flex items-center space-x-1 transition-colors ${
-                  activeDropdown === 'services'
-                    ? 'text-primary-600 border-b-2 border-primary-600'
-                    : 'text-gray-700 hover:text-primary-600'
-                }`}
+                 className={`px-4 py-2 flex items-center space-x-1 transition-colors ${
+                   activeDropdown === 'services'
+                     ? 'text-primary-600 border-b-2 border-primary-600'
+                     : 'text-purple-700 hover:text-primary-600'
+                 }`}
               >
                 <span>Services</span>
                 {activeDropdown === 'services' ? (
@@ -301,7 +313,7 @@ const Navigation = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     onMouseLeave={() => setActiveDropdown(null)}
-                    className="absolute top-full left-0 mt-0 w-[800px] bg-white shadow-2xl border border-gray-200 rounded-lg overflow-hidden"
+                     className="absolute top-full left-0 mt-0 w-[800px] bg-white shadow-2xl border border-purple-200 rounded-lg overflow-hidden"
                   >
                     <div className="grid grid-cols-2 p-6">
                       <div className="pr-6 border-r border-gray-200">
@@ -320,7 +332,7 @@ const Navigation = () => {
                                 hoveredCategory === category.name ? 'bg-blue-50' : 'hover:bg-gray-50'
                               }`}
                             >
-                              <span className="text-gray-900">{category.name}</span>
+                               <span className="text-purple-900">{category.name}</span>
                               <ChevronRight className="w-4 h-4 text-gray-400" />
                             </div>
                           ))}
@@ -343,7 +355,7 @@ const Navigation = () => {
                                     <button
                                       key={item}
                                       onClick={() => handleItemClick(item, 'services')}
-                                      className="text-left px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded text-sm"
+                                       className="text-left px-3 py-2 text-purple-700 hover:text-primary-600 hover:bg-purple-50 rounded text-sm"
                                     >
                                       {item}
                                     </button>
@@ -364,11 +376,11 @@ const Navigation = () => {
               <button
                 onClick={() => handleNavClick('carriers')}
                 onMouseEnter={() => setActiveDropdown('carriers')}
-                className={`px-4 py-2 flex items-center space-x-1 transition-colors ${
-                  activeDropdown === 'carriers'
-                    ? 'text-primary-600 border-b-2 border-primary-600'
-                    : 'text-gray-700 hover:text-primary-600'
-                }`}
+                 className={`px-4 py-2 flex items-center space-x-1 transition-colors ${
+                   activeDropdown === 'carriers'
+                     ? 'text-primary-600 border-b-2 border-primary-600'
+                     : 'text-purple-700 hover:text-primary-600'
+                 }`}
               >
                 <span>Carriers</span>
                 {activeDropdown === 'carriers' ? (
@@ -384,7 +396,7 @@ const Navigation = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     onMouseLeave={() => setActiveDropdown(null)}
-                    className="absolute top-full left-0 mt-0 w-[800px] bg-white shadow-2xl border border-gray-200 rounded-lg overflow-hidden"
+                     className="absolute top-full left-0 mt-0 w-[800px] bg-white shadow-2xl border border-purple-200 rounded-lg overflow-hidden"
                   >
                     <div className="grid grid-cols-2 p-6">
                       <div className="pr-6 border-r border-gray-200">
@@ -403,9 +415,9 @@ const Navigation = () => {
                                 hoveredCategory === category.name ? 'bg-blue-50' : 'hover:bg-gray-50'
                               }`}
                             >
-                              <span className="text-gray-900">{category.name}</span>
+                               <span className="text-purple-900">{category.name}</span>
                               {category.subItems && (
-                                <ChevronRight className="w-4 h-4 text-gray-400" />
+                                <ChevronRight className="w-4 h-4 text-purple-400" />
                               )}
                             </div>
                           ))}
@@ -428,7 +440,7 @@ const Navigation = () => {
                                     <button
                                       key={item}
                                       onClick={() => handleItemClick(item, 'carriers')}
-                                      className="w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded text-sm"
+                                       className="w-full text-left px-3 py-2 text-purple-700 hover:text-primary-600 hover:bg-purple-50 rounded text-sm"
                                     >
                                       {item}
                                     </button>
@@ -449,11 +461,11 @@ const Navigation = () => {
               <button
                 onClick={() => handleNavClick('resources')}
                 onMouseEnter={() => setActiveDropdown('resources')}
-                className={`px-4 py-2 flex items-center space-x-1 transition-colors ${
-                  activeDropdown === 'resources'
-                    ? 'text-primary-600 border-b-2 border-primary-600'
-                    : 'text-gray-700 hover:text-primary-600'
-                }`}
+                 className={`px-4 py-2 flex items-center space-x-1 transition-colors ${
+                   activeDropdown === 'resources'
+                     ? 'text-primary-600 border-b-2 border-primary-600'
+                     : 'text-purple-700 hover:text-primary-600'
+                 }`}
               >
                 <span>Resources</span>
                 {activeDropdown === 'resources' ? (
@@ -469,7 +481,7 @@ const Navigation = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     onMouseLeave={() => setActiveDropdown(null)}
-                    className="absolute top-full left-0 mt-0 w-[800px] bg-white shadow-2xl border border-gray-200 rounded-lg overflow-hidden"
+                     className="absolute top-full left-0 mt-0 w-[800px] bg-white shadow-2xl border border-purple-200 rounded-lg overflow-hidden"
                   >
                     <div className="grid grid-cols-2 p-6">
                       <div className="pr-6 border-r border-gray-200">
@@ -488,7 +500,7 @@ const Navigation = () => {
                                 hoveredCategory === category.name ? 'bg-blue-50' : 'hover:bg-gray-50'
                               }`}
                             >
-                              <span className="text-gray-900">{category.name}</span>
+                               <span className="text-purple-900">{category.name}</span>
                               <ChevronRight className="w-4 h-4 text-gray-400" />
                             </div>
                           ))}
@@ -511,7 +523,7 @@ const Navigation = () => {
                                     <button
                                       key={item}
                                       onClick={() => handleItemClick(item, 'resources')}
-                                      className="w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded text-sm"
+                                       className="w-full text-left px-3 py-2 text-purple-700 hover:text-primary-600 hover:bg-purple-50 rounded text-sm"
                                     >
                                       {item}
                                     </button>
@@ -532,11 +544,11 @@ const Navigation = () => {
               <button
                 onClick={() => handleNavClick('about')}
                 onMouseEnter={() => setActiveDropdown('about')}
-                className={`px-4 py-2 flex items-center space-x-1 transition-colors ${
-                  activeDropdown === 'about'
-                    ? 'text-primary-600 border-b-2 border-primary-600'
-                    : 'text-gray-700 hover:text-primary-600'
-                }`}
+                 className={`px-4 py-2 flex items-center space-x-1 transition-colors ${
+                   activeDropdown === 'about'
+                     ? 'text-primary-600 border-b-2 border-primary-600'
+                     : 'text-purple-700 hover:text-primary-600'
+                 }`}
               >
                 <span>About</span>
                 {activeDropdown === 'about' ? (
@@ -552,7 +564,7 @@ const Navigation = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     onMouseLeave={() => setActiveDropdown(null)}
-                    className="absolute top-full left-0 mt-0 w-64 bg-white shadow-2xl border border-gray-200 rounded-lg overflow-hidden"
+                     className="absolute top-full left-0 mt-0 w-64 bg-white shadow-2xl border border-purple-200 rounded-lg overflow-hidden"
                   >
                     <div className="p-6">
                       <Link
@@ -566,7 +578,7 @@ const Navigation = () => {
                           <Link
                             key={item}
                             to={`/about/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                            className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded"
+                             className="block px-3 py-2 text-purple-700 hover:text-primary-600 hover:bg-purple-50 rounded"
                           >
                             {item}
                           </Link>
@@ -583,11 +595,11 @@ const Navigation = () => {
               <button
                 onClick={() => handleNavClick('contact')}
                 onMouseEnter={() => setActiveDropdown('contact')}
-                className={`px-4 py-2 flex items-center space-x-1 transition-colors ${
-                  activeDropdown === 'contact'
-                    ? 'text-primary-600 border-b-2 border-primary-600'
-                    : 'text-gray-700 hover:text-primary-600'
-                }`}
+                 className={`px-4 py-2 flex items-center space-x-1 transition-colors ${
+                   activeDropdown === 'contact'
+                     ? 'text-primary-600 border-b-2 border-primary-600'
+                     : 'text-purple-700 hover:text-primary-600'
+                 }`}
               >
                 <span>Contact</span>
                 {activeDropdown === 'contact' ? (
@@ -603,7 +615,7 @@ const Navigation = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     onMouseLeave={() => setActiveDropdown(null)}
-                    className="absolute top-full left-0 mt-0 w-64 bg-white shadow-2xl border border-gray-200 rounded-lg overflow-hidden"
+                     className="absolute top-full left-0 mt-0 w-64 bg-white shadow-2xl border border-purple-200 rounded-lg overflow-hidden"
                   >
                     <div className="p-6">
                       <Link
@@ -617,7 +629,7 @@ const Navigation = () => {
                           <button
                             key={item}
                             onClick={() => handleItemClick(item, 'contact')}
-                            className="w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded"
+                             className="w-full text-left px-3 py-2 text-purple-700 hover:text-primary-600 hover:bg-purple-50 rounded"
                           >
                             {item}
                           </button>
@@ -648,7 +660,7 @@ const Navigation = () => {
               <div className="relative">
                 <button
                   onClick={() => handleNavClick('user')}
-                  className="px-4 py-2 text-gray-700 hover:text-primary-600 flex items-center space-x-1 transition-colors"
+                   className="px-4 py-2 text-purple-700 hover:text-primary-600 flex items-center space-x-1 transition-colors"
                 >
                   <span>Dashboard</span>
                   <ChevronDown className="w-4 h-4" />
@@ -660,36 +672,36 @@ const Navigation = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       onMouseLeave={() => setActiveDropdown(null)}
-                      className="absolute top-full right-0 mt-2 w-48 bg-white shadow-2xl border border-gray-200 rounded-lg overflow-hidden"
+                       className="absolute top-full right-0 mt-2 w-48 bg-white shadow-2xl border border-purple-200 rounded-lg overflow-hidden"
                     >
                       <div className="p-2">
                         <Link
                           to="/dashboard"
-                          className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded"
+                             className="block px-3 py-2 text-purple-700 hover:text-primary-600 hover:bg-purple-50 rounded"
                         >
                           My Dashboard
                         </Link>
                         <Link
                           to="/track"
-                          className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded"
+                             className="block px-3 py-2 text-purple-700 hover:text-primary-600 hover:bg-purple-50 rounded"
                         >
                           Track Shipments
                         </Link>
                         <Link
                           to="/create-shipment"
-                          className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded"
+                             className="block px-3 py-2 text-purple-700 hover:text-primary-600 hover:bg-purple-50 rounded"
                         >
                           Create Shipment
                         </Link>
                         {user.role === 'admin' && (
                           <Link
                             to="/admin"
-                            className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded"
+                             className="block px-3 py-2 text-purple-700 hover:text-primary-600 hover:bg-purple-50 rounded"
                           >
                             Admin Panel
                           </Link>
                         )}
-                        <div className="border-t border-gray-200 my-1"></div>
+                         <div className="border-t border-purple-200 my-1"></div>
                         <button
                           onClick={() => {
                             logout();
@@ -707,7 +719,7 @@ const Navigation = () => {
             ) : (
               <Link
                 to="/login"
-                className="px-4 py-2 text-gray-700 hover:text-primary-600 transition-colors"
+                className="px-4 py-2 text-purple-700 hover:text-primary-600 transition-colors"
               >
                 Login
               </Link>
@@ -724,7 +736,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setActiveDropdown(activeDropdown === 'mobile' ? null : 'mobile')}
-            className="lg:hidden p-2 text-gray-700"
+             className="lg:hidden p-2 text-purple-700"
           >
             {activeDropdown === 'mobile' ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -738,24 +750,24 @@ const Navigation = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-gray-200 bg-white"
+             className="lg:hidden border-t border-purple-200 bg-white"
           >
             <div className="px-4 py-4 space-y-2">
-              <Link to="/create-shipment" className="block py-2 text-gray-700">
-                Get a quote
-              </Link>
-              <Link to="/dashboard" className="block py-2 text-gray-700">
-                Load board
-              </Link>
-              {user ? (
-                <Link to="/dashboard" className="block py-2 text-gray-700">
-                  Dashboard
-                </Link>
-              ) : (
-                <Link to="/login" className="block py-2 text-gray-700">
-                  Login
-                </Link>
-              )}
+               <Link to="/create-shipment" className="block py-2 text-purple-700">
+                 Get a quote
+               </Link>
+               <Link to="/dashboard" className="block py-2 text-purple-700">
+                 Load board
+               </Link>
+               {user ? (
+                 <Link to="/dashboard" className="block py-2 text-purple-700">
+                   Dashboard
+                 </Link>
+               ) : (
+                 <Link to="/login" className="block py-2 text-purple-700">
+                   Login
+                 </Link>
+               )}
             </div>
           </motion.div>
         )}
